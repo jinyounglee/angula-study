@@ -5,8 +5,6 @@ angular.module('customFilter', [])
            var results=[];
            var keys={};
 
-
-
            for(var i=0;i<data.length;i++){
                var val = data[i][prop];
                if( typeof val === 'number'){
