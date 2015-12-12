@@ -18,15 +18,19 @@ angular.module('hello', [])
                 price : 1800
             },
             {
-                title : '지우',
+                title : '지우개',
                 count : 1,
                 price : 800
             },
             {
-                title : '연',
+                title : '연필',
                 count : 12,
                 price : 400
             }
         ]
+
+        $scope.delete = function(idx){
+            $scope.items.splice(idx, 1);
+        }
     });
 
