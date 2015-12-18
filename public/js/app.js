@@ -9,3 +9,4 @@ app.controller('MainController', function($scope){
         alert($scope.user.name);
     }
 });
+

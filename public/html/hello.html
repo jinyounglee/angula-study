@@ -18,6 +18,10 @@
 
     <br>
     <h1>장바구니</h1>
+    <span>이름: <span><input type="text" ng-model="item.title"></span></span>
+    <span>수량: <span><input type="text" ng-model="item.count"></span></span>
+    <span>가격: <span><input type="text" ng-model="item.price"></span></span>
+    <button ng-click="add(item)">추가</button>
     <div ng-repeat="item in items">   <!--items 는 $scope에 존재해야한다.-->
         <span>{{$index}}</span>
         <span>{{item.title}}</span>
@@ -27,5 +31,8 @@
         <span> 총합 : {{item.count * item.price}} 원</span>
         <button ng-click="delete($index)">삭제</button>
     </div>
+    <br>
+    전체금액 :: {{sumTotal()}}<br>
+    할인금액 :: {{saleTotal()}}<br>
 </body>
 </html>

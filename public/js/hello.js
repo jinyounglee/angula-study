@@ -32,5 +32,24 @@ angular.module('hello', [])
         $scope.delete = function(idx){
             $scope.items.splice(idx, 1);
         }
-    });
 
+        $scope.add = function( item ){
+            $scope.items.push(item);
+            // item이 등록된 이후에는 input box가 비어야 한다.
+            $
+        }
+
+        $scope.sumTotal = function(){
+            var total = 0;
+            for( var i=0;i< $scope.items.length;i++){
+                var price = $scope.items[i].price;
+                var count = $scope.items[i].count;
+                total += price * count;
+            }
+            return total;
+        }
+
+        $scope.saleTotal = function(){
+            
+        }
+    });
