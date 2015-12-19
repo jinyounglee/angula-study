@@ -39,6 +39,7 @@ angular.module('hello', [])
             $
         }
 
+        // 전체 합계
         $scope.sumTotal = function(){
             var total = 0;
             for( var i=0;i< $scope.items.length;i++){
