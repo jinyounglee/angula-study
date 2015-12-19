@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <div id="list"></div>
+    <script type="text/javascript">
+        var _list = document.getElementById('list');
+        var str = '';
+        var members = ['홍길동','장금이','장백지'];
+
+
+        for( member in members ){
+            str += '<span>' + members[member] + '</span><br>';
+        }
+        _list.innerHTML = str;
+    </script>
+</body>
+</html>
