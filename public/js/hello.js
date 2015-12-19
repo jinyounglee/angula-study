@@ -35,8 +35,7 @@ angular.module('hello', [])
 
         $scope.add = function( item ){
             $scope.items.push(item);
-            // item이 등록된 이후에는 input box가 비어야 한다.
-            $
+            $scope.input = null;
         }
 
         // 전체 합계
@@ -49,6 +48,7 @@ angular.module('hello', [])
             }
             return total;
         }
+
 
         $scope.saleTotal = function(){
             
