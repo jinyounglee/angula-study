@@ -35,7 +35,7 @@ angular.module('hello', [])
 
         $scope.add = function( item ){
             $scope.items.push(item);
-            $scope.input = null;
+            $scope.item = null;
         }
 
         // 전체 합계
