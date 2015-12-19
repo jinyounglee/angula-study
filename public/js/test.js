@@ -22,3 +22,8 @@ function f(){
 }
 f();
 console.log(g);
+
+var num = 2323.2323;
+var ee = Math.ceil(num);
+
+console.log(ee);
