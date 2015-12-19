@@ -50,7 +50,4 @@ angular.module('hello', [])
         }
 
 
-        $scope.saleTotal = function(){
-            
-        }
     });
