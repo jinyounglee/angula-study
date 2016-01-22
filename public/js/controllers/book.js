@@ -15,4 +15,14 @@ angular.module('book',['customFilter']).controller('bookCtrl', function($scope){
             {category : 'it', grade: 2.9, name:'Pro Angular', price:'46000', id:9}
         ]
     };
+
+    $scope.gradeToStar = function(grade){
+        var result = '';
+        if(angular.isNumber(grade)){
+            for(var i=0;i<grade;i++){
+                result += '*';
+            }
+        }
+        return result;
+    }
 });

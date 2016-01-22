@@ -17,15 +17,18 @@
 <div class="panel panel-default row" ng-controller="bookListCtrl">
     <div class="col-xs-3">
         <a ng-click="selectCategory()" class="btn btn-block btn-default btn-lg" >Home</a>
-        <a ng-repeat="item in data.books | orderBy: 'grade' | unique: 'grade' " ng-click="selectedCategory(item)" class="btn btn-block btn-default btn-lg"  >{{item}}</a>
+        <a ng-repeat="item in data.books | orderBy: '-grade' | unique: 'grade' " ng-click="selectedCategory(item)"
+           class="btn btn-block btn-default btn-lg"  >
+            <strong>{{gradeToStar(item)}}</strong>
+        </a>
     </div>
     <div class="col-xs-8">
         <div class="well" ng-repeat="item in data.books | orderBy: '-grade' | filter:categoryFilterFn">
             <h3>
-                <strong>{{item.name}}</strong>
+                <a ng-click="showItem(item)"><strong>{{item.name}}</strong></a>
                 <span class="pull-right label label-primary">{{item.price | number:0}} 원</span>
             </h3>
-            <span class="lead">{{item.grade}}</span>
+            <span class="lead">평점 :: {{item.grade}}</span>
         </div>
     </div>
 </div>
