@@ -17,10 +17,12 @@
     <button ng-click="toUpper()">대문자로 전환!!</button>
 
     <br>
-    <h1>장바구니</h1>
-    <span>이름: <span><input type="text" ng-model="item.title"></span></span>
-    <span>수량: <span><input type="text" ng-model="item.count"></span></span>
-    <span>가격: <span><input type="text" ng-model="item.price"></span></span>
+    <h1> 장바구니 </h1>
+    <div>
+        <span>이름: <span><input type="text" ng-model="item.title"></span></span>
+        <span>수량: <span><input type="text" ng-model="item.count"></span></span>
+        <span>가격: <span><input type="text" ng-model="item.price"></span></span>
+    </div>
     <button ng-click="add(item)">추가</button>
     <div ng-repeat="item in items">   <!--items 는 $scope에 존재해야한다.-->
         <span>{{$index}}</span>
@@ -33,7 +35,9 @@
     </div>
     <br>
     <div >
-        전체금액 :: {{sumTotal()}}<br>
+        <span>전체 금액 :: {{sumTotal()}}</span></br>
+        <span>할인 금액 :: {{bill.discountTotalPrice}}</span></br>
+        <span>결제 금액 :: {{bill.finalPrice}}</span></br>
     </div>
 </body>
 </html>

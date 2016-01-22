@@ -35,19 +35,34 @@ angular.module('hello', [])
 
         $scope.add = function( item ){
             $scope.items.push(item);
-            $scope.item = null;
+            $scope.refresh();
+        }
+
+        $scope.refresh = function(){
+            $scope.title = '';
+            $scope.count = 0;
+            $scope.price = 0;
+        }
+
+        $scope.bill = {
+            totalPrice : 0,
+            discountTotalPrice : 0,
+            finalPrice : 0
         }
 
         // 전체 합계
         $scope.sumTotal = function(){
+
             var total = 0;
             for( var i=0;i< $scope.items.length;i++){
                 var price = $scope.items[i].price;
                 var count = $scope.items[i].count;
                 total += price * count;
             }
+
+            $scope.bill.totalPrice = total;
+            $scope.bill.discountTotalPrice = ( $scope.bill.totalPrice > 20000 ) ? $scope.bill.totalPrice/10 : 0;
+            $scope.bill.finalPrice = total - $scope.bill.discountTotalPrice;
             return total;
         }
-
-
     });
